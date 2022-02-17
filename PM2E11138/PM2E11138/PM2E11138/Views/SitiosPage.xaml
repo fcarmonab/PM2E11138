@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:Converters="clr-namespace:PM2E11138.Converters"
+             x:Class="PM2E11138.Views.SitiosPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView x:Name="ListaSitios" 
+                      ItemTapped="ListaSitios_ItemTapped"
+                      RowHeight="75">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <ImageCell  ImageSource="{Binding Imagen, Converter={StaticResource ByteArrayToImage}}" 
+                                    Text="{Binding Descripcion}" 
+                                    Detail="" 
+                                    TextColor="Blue"
+                                    DetailColor="#503026" x:Name="ItemSitio"/>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

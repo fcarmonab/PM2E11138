@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E11138.Views.CrearSitioPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Codigo"/>
+            <Image x:Name="img" WidthRequest="100" HeightRequest="300" />
+            <Button x:Name="TomarFoto" Text="Tomar Foto de Sitio" Clicked="TomarFoto_Clicked" />
+            <Entry x:Name="Latitud" Text="{Binding Latitud.Text}" IsEnabled="False" Placeholder="Tome foto para obtener Latitud"/>
+            <Entry x:Name="Longitud" Text="{Binding Longitud.Text}" IsEnabled="False" Placeholder="Tome foto para obtener  Longitud"/>
+            <Entry x:Name="Descripcion" Placeholder="Escriba Descripción de sitio" />
+            <Label></Label>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" x:Name="Agregar" Text="Agregar" Clicked="Agregar_Clicked"/>
+                <Button Grid.Column="2" x:Name="Lista" Text="Lista Sitios" Clicked="Lista_Clicked"/>
+            </Grid>
+            <Button x:Name="Salir" Text="Salir App" Clicked="Salir_Clicked"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
