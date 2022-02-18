@@ -58,7 +58,7 @@ namespace PM2E11138.Views
 
             }
             else {
-                DisplayAlert("","Escriba una descripcion del sitio","OK");
+               await DisplayAlert("","Escriba una descripcion del sitio","OK");
             }
 
 
