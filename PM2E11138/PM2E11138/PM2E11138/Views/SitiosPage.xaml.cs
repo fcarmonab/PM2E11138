@@ -74,7 +74,8 @@ namespace PM2E11138.Views
                 {
                     BindingContext = item;
                  };
-                await Navigation.PushAsync(pagina);
+                await Navigation.PopAsync();
+                
 
             }
 

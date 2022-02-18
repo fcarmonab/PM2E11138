@@ -29,7 +29,7 @@ namespace PM2E11138.Views
 
         private async  void Agregar_Clicked(object sender, EventArgs e)
         {
-
+            
             var sites = new Sitios
             {
                 Codigo = Convert.ToInt32(Codigo.Text),
@@ -38,24 +38,30 @@ namespace PM2E11138.Views
                 Longitud = (float)Convert.ToDouble(Longitud.Text),
                 Descripcion = Descripcion.Text
             };
-            
 
-            var resultado = await App.BaseDatos.GuardarSitio(sites);
-
-            if (resultado != 0)
+            if (Descripcion.Text !=null)
             {
-                await DisplayAlert("", "Sitio Agregado.", "OK");
-                var pagina = new CrearSitioPage();
-                await Navigation.PushAsync(pagina);
-            }
-            else 
-            {
-                await DisplayAlert("", "Ha ocurrido un error.", "OK");
-            }
-            
 
 
-            
+                var resultado = await App.BaseDatos.GuardarSitio(sites);
+
+                if (resultado != 0)
+                {
+                    await DisplayAlert("", "Sitio Agregado.", "OK");
+                    var pagina = new CrearSitioPage();
+                    await Navigation.PushAsync(pagina);
+                }
+                else
+                {
+                    await DisplayAlert("", "Ha ocurrido un error.", "OK");
+                }
+
+            }
+            else {
+                DisplayAlert("","Escriba una descripcion del sitio","OK");
+            }
+
+
         }
 
         private async void Lista_Clicked(object sender, EventArgs e)
